@@ -24,13 +24,13 @@ public class Main {
         Atributo[] Assistances = generador.generarAsistencias();
 
         for (Atributo a: Assistances) {
-            System.out.println(a.ObtenerAtributo("fecha"));
+            System.out.println(a.ObtenerAtributo("id"));
         }
         System.out.println("---------------------------------");
         BubbleSort SB = new BubbleSort();
-        SB.ordenamiento(Assistances,"fecha");
+        SB.ordenamiento(Assistances,"id");
         for (Atributo a: Assistances) {
-            System.out.println(a.ObtenerAtributo("fecha"));
+            System.out.println(a.ObtenerAtributo("id"));
         }
     }
 }
