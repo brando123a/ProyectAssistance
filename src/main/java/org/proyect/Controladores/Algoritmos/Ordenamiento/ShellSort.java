@@ -17,43 +17,69 @@ public class ShellSort implements Ordenar{
         };
     }
     private Object[] ordenarString(Atributo[] lista, String parametro){
-        int largo = lista.length;
-        for (int i = 0; i < largo; i++) {
-            for (int j = 0; j < largo - 1; j++) {
-                String primerString = String.valueOf(lista[j].ObtenerAtributo(parametro));
-                String segundoString = String.valueOf(lista[j+1].ObtenerAtributo(parametro));
-                if (primerString.compareTo(segundoString)>0) {
-                    Atributo temp = lista[j + 1];
-                    lista[j + 1] = lista[j];
-                    lista[j] = temp;
+        int salto, i;
+        Atributo aux;
+        boolean cambios;
+        for (salto = lista.length / 2; salto != 0; salto /= 2) {
+            cambios = true;
+            while (cambios) {
+                cambios = false;
+                for (i = salto; i < lista.length; i++){
+                    //Guardamos los atributos de las clases en la lista
+                    String primerString = String.valueOf(lista[i - salto].ObtenerAtributo(parametro));
+                    String segundoString = String.valueOf(lista[i].ObtenerAtributo(parametro));
+                    if (primerString.compareTo(segundoString)>0) {
+                        aux = lista[i];
+                        lista[i] = lista[i - salto];
+                        lista[i - salto] = aux;
+                        cambios = true;
+                    }
                 }
             }
         }
         return lista;
     }
     private Object[] ordenarInt(Atributo[] lista, String parametro){
-        int largo = lista.length;
-        for (int i = 0; i < largo; i++) {
-            for (int j = 0; j < largo - 1; j++) {
-                if ((Integer)lista[j].ObtenerAtributo(parametro) > (Integer)lista[j+1].ObtenerAtributo(parametro)) {
-                    Atributo temp = lista[j + 1];
-                    lista[j + 1] = lista[j];
-                    lista[j] = temp;
+            int salto, i;
+            Atributo aux;
+            boolean cambios;
+            for (salto = lista.length / 2; salto != 0; salto /= 2) {
+                cambios = true;
+                while (cambios) {
+                    cambios = false;
+                    for (i = salto; i < lista.length; i++){
+                        //Guardamos los atributos de las clases en la lista
+                        int anterior = (Integer) lista[i - salto].ObtenerAtributo(parametro);
+                        int posterior = (Integer) lista[i].ObtenerAtributo(parametro);
+                        if (anterior > posterior) {
+                            aux = lista[i];
+                            lista[i] = lista[i - salto];
+                            lista[i - salto] = aux;
+                            cambios = true;
+                        }
+                    }
                 }
             }
-        }
         return lista;
     }
     private Object[] ordenarDate(Atributo[] lista, String parametro){
-        int largo = lista.length;
-        for (int i = 0; i < largo; i++) {
-            for (int j = 0; j < largo - 1; j++) {
-                Date primerString = (Date) lista[j].ObtenerAtributo(parametro);
-                Date segundoString = (Date) lista[j+1].ObtenerAtributo(parametro);
-                if (primerString.compareTo(segundoString)>0) {
-                    Atributo temp = lista[j + 1];
-                    lista[j + 1] = lista[j];
-                    lista[j] = temp;
+        int salto, i;
+        Atributo aux;
+        boolean cambios;
+        for (salto = lista.length / 2; salto != 0; salto /= 2) {
+            cambios = true;
+            while (cambios) {
+                cambios = false;
+                for (i = salto; i < lista.length; i++){
+                    //Guardamos los atributos de las clases en la lista
+                    Date primerString = (Date) lista[i - salto].ObtenerAtributo(parametro);
+                    Date segundoString = (Date) lista[i].ObtenerAtributo(parametro);
+                    if (primerString.compareTo(segundoString)>0) {
+                        aux = lista[i];
+                        lista[i] = lista[i - salto];
+                        lista[i - salto] = aux;
+                        cambios = true;
+                    }
                 }
             }
         }

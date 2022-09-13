@@ -1,5 +1,6 @@
 package org.proyect;
 
+import org.proyect.Controladores.Algoritmos.Ordenamiento.ShellSort;
 import org.proyect.Controladores.ControladoresVentanas.ControladorListarAsistencias;
 import org.proyect.Controladores.ControladoresVentanas.ControladorListarEmpleados;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
@@ -24,13 +25,14 @@ public class Main {
         Atributo[] Assistances = generador.generarAsistencias();
 
         for (Atributo a: Assistances) {
-            System.out.println(a.ObtenerAtributo("id"));
+            System.out.println(a.ObtenerAtributo("fecha"));
         }
         System.out.println("---------------------------------");
         BubbleSort SB = new BubbleSort();
-        SB.ordenamiento(Assistances,"id");
+        ShellSort SS = new ShellSort();
+        SS.ordenamiento(Assistances,"fecha");
         for (Atributo a: Assistances) {
-            System.out.println(a.ObtenerAtributo("id"));
+            System.out.println(a.ObtenerAtributo("fecha"));
         }
     }
 }
