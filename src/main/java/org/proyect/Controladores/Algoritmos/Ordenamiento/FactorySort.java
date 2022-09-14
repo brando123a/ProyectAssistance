@@ -4,22 +4,29 @@ import org.proyect.Modelos.Atributo;
 
 public class FactorySort {
     public Ordenar devolverAlgoritmoOrdenamiento(String algoritmo){
-        switch (algoritmo){
-            case "Bubblesort":
+        switch (algoritmo) {
+            case "Bubblesort" -> {
                 return new BubbleSort();
-            case "Selectionsort":
+            }
+            case "Selectionsort" -> {
                 return new BubbleSort();
-            case "Insertionsort":
+            }
+            case "Insertionsort" -> {
                 return new BubbleSort();
-            case "Quicksort":
+            }
+            case "Quicksort" -> {
                 return new BubbleSort();
-            case "Shellsort":
+            }
+            case "Shellsort" -> {
                 return new ShellSort();
-            case "Mergesort":
+            }
+            case "Mergesort" -> {
                 return new BubbleSort();
-            default:
+            }
+            default -> {
                 System.out.println("Error");
                 return new BubbleSort();
+            }
         }
     }
     public Object[] ordenarLista(String metodo, Atributo[] lista, String parametro) throws Exception {

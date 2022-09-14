@@ -71,6 +71,8 @@ public class ControladorListarEmpleados extends Controlador{
         String algoritmo = (String) jCBAlgoritmo.getSelectedItem();
         String criterio = (String) jCBCriterio.getSelectedItem();
         criterio = criterio.toLowerCase();
+        algoritmo = algoritmo.trim();
+        System.out.println("+++"+algoritmo+"+++");
         if (criterio.equals("dni")){
             funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,"id",caracteristicas);
             return;

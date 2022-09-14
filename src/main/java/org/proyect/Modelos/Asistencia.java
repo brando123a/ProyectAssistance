@@ -1,4 +1,5 @@
 package org.proyect.Modelos;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Asistencia implements Atributo{
@@ -6,6 +7,10 @@ public class Asistencia implements Atributo{
     private String empleado;
     private Date fecha;
     private String hora;
+    private String pattern = "dd-MM-yyyy";
+    private String patternHour = "HH:mm";
+    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+    private SimpleDateFormat simpleHourFormat = new SimpleDateFormat(patternHour);
 
     public int getId() {
         return id;
@@ -44,6 +49,8 @@ public class Asistencia implements Atributo{
         if (atributo.equals("id")) return getId();
         if (atributo.equals("empleado")) return getEmpleado();
         if (atributo.equals("fecha")) return getFecha();
+        if (atributo.equals("fechaformateada")) return simpleDateFormat.format(fecha);
+        if (atributo.equals("horaformateada")) return simpleHourFormat.format(fecha);
         return null;
     }
 }

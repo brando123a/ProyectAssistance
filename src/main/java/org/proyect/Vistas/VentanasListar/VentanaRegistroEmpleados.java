@@ -61,6 +61,7 @@ public class VentanaRegistroEmpleados extends javax.swing.JFrame implements Vent
         jCBAlgoritmo = new javax.swing.JComboBox<>();
         jCBCriterio = new javax.swing.JComboBox<>();
         jButtonOrdenar = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -197,6 +198,10 @@ public class VentanaRegistroEmpleados extends javax.swing.JFrame implements Vent
         jButtonOrdenar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         PanelFondo.add(jButtonOrdenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 231, 160, 40));
 
+        jLabel7.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 10)); // NOI18N
+        jLabel7.setText("Todos los derechos reservados @grupo3");
+        PanelFondo.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -268,6 +273,7 @@ public class VentanaRegistroEmpleados extends javax.swing.JFrame implements Vent
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
