@@ -9,16 +9,16 @@ public class GenerarEmpleadosAsistencias {
 
     public Atributo[] generarEmpleados(){
 
-        Empleado u1 = new Empleado(); u1.setId(500); u1.setNombre("Manuel"); u1.setDepartamento("Logistica");
-        Empleado u2 = new Empleado(); u2.setId(3); u2.setNombre("Jose"); u2.setDepartamento("Marketing");
-        Empleado u3 = new Empleado(); u3.setId(8); u3.setNombre("Maria"); u3.setDepartamento("Ventas");
-        Empleado u4 = new Empleado(); u4.setId(32); u4.setNombre("Pedro"); u4.setDepartamento("Tic");
-        Empleado u5 = new Empleado(); u5.setId(55); u5.setNombre("Zac"); u5.setDepartamento("Tic");
-        Empleado u6 = new Empleado(); u6.setId(77); u6.setNombre("Roberto"); u6.setDepartamento("Marketing");
-        Empleado u7 = new Empleado(); u7.setId(31); u7.setNombre("Messi"); u7.setDepartamento("Ventas");
-        Empleado u8 = new Empleado(); u8.setId(30); u8.setNombre("Curry"); u8.setDepartamento("Ventas");
-        Empleado u9 = new Empleado(); u9.setId(6); u9.setNombre("Lebron"); u9.setDepartamento("Logistica");
-        Empleado u10 = new Empleado(); u10.setId(43); u10.setNombre("Giannis"); u10.setDepartamento("Marketing");
+        Empleado u1 = new Empleado(); u1.setId(500); u1.setNombre("Manuel"); u1.setDepartamento("Logistica"); u1.setEmail("manuel@hotmail.com");
+        Empleado u2 = new Empleado(); u2.setId(3); u2.setNombre("Jose"); u2.setDepartamento("Marketing"); u2.setEmail("jose@hotmail.com");
+        Empleado u3 = new Empleado(); u3.setId(8); u3.setNombre("Maria"); u3.setDepartamento("Ventas"); u3.setEmail("mariapro@gmail.com");
+        Empleado u4 = new Empleado(); u4.setId(32); u4.setNombre("Pedro"); u4.setDepartamento("Tic"); u4.setEmail("psanchez@tuki.com");
+        Empleado u5 = new Empleado(); u5.setId(55); u5.setNombre("Zac"); u5.setDepartamento("Tic"); u5.setEmail("sac@si.com");
+        Empleado u6 = new Empleado(); u6.setId(77); u6.setNombre("Roberto"); u6.setDepartamento("Marketing"); u6.setEmail("rrbort@hotmail.com");
+        Empleado u7 = new Empleado(); u7.setId(31); u7.setNombre("Messi"); u7.setDepartamento("Ventas"); u7.setEmail("goat@hotmail.com");
+        Empleado u8 = new Empleado(); u8.setId(30); u8.setNombre("Curry"); u8.setDepartamento("Ventas"); u8.setEmail("3shoot@gmail.com");
+        Empleado u9 = new Empleado(); u9.setId(6); u9.setNombre("Lebron"); u9.setDepartamento("Logistica"); u9.setEmail("king@nba.com");
+        Empleado u10 = new Empleado(); u10.setId(43); u10.setNombre("Giannis"); u10.setDepartamento("Marketing"); u10.setEmail("freak@buck.com");
         Atributo[] lista = new Atributo[10];
         lista[0] = u1;
         lista[1] = u2;

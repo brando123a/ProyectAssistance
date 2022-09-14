@@ -12,10 +12,10 @@ import org.proyect.Controladores.Algoritmos.Ordenamiento.BubbleSort;
 
 
 public class Main {
-    /*static VentanaRegistroEmpleados ventana1 = new VentanaRegistroEmpleados();
+    static VentanaRegistroEmpleados ventana1 = new VentanaRegistroEmpleados();
     static ControladorListarEmpleados controlador1 = new ControladorListarEmpleados(ventana1);
 
-    static VentanaRegistroAsistencias ventana2 = new VentanaRegistroAsistencias();
+    /*static VentanaRegistroAsistencias ventana2 = new VentanaRegistroAsistencias();
     static ControladorListarAsistencias controlador2 = new ControladorListarAsistencias(ventana2);*/
 
     public static void main(String[] args) throws Exception {
@@ -34,5 +34,6 @@ public class Main {
         for (Atributo a: Assistances) {
             System.out.println(a.ObtenerAtributo("fecha"));
         }
+        controlador1.iniciarVentana();
     }
 }

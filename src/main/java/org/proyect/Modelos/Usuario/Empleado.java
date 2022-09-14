@@ -14,6 +14,7 @@ public class Empleado extends Usuario{
 
         if (atributo.equals("id")) return getId();
         if (atributo.equals("nombre")) return getNombre();
+        if (atributo.equals("email")) return getEmail();
         if (atributo.equals("departamento")) return getDepartamento();
         return null;
     }

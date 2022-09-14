@@ -3,7 +3,7 @@ package org.proyect.Modelos;
 public class Departamento implements Atributo{
     private int id;
     private String nombre;
-    private String descricion;
+    private String descripcion;
     private String area;
 
     public int getId() {
@@ -23,11 +23,11 @@ public class Departamento implements Atributo{
     }
 
     public String getDescricion() {
-        return descricion;
+        return descripcion;
     }
 
     public void setDescricion(String descricion) {
-        this.descricion = descricion;
+        this.descripcion = descricion;
     }
 
     public String getArea() {
