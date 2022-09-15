@@ -1,0 +1,80 @@
+package org.proyect.Controladores.Algoritmos.Ordenamiento;
+
+
+import org.proyect.Modelos.Atributo;
+
+import java.util.Date;
+
+public class Insertionsort implements Ordenar {
+    @Override
+    public Object[] ordenamiento(Atributo[] lista, String parametro) throws Exception {
+        Object tipo = lista[0].ObtenerAtributo(parametro);
+        return switch (((Object) tipo).getClass().getSimpleName()) {
+            case "String" -> ordenarString(lista, parametro);// lista,parametro,lista.length
+            case "Integer" -> ordenarInt(lista, parametro);// lista,parametro,lista.length
+            case "Date" -> ordenarDate(lista, parametro);// lista,parametro,lista.length
+            default -> throw new Exception("Error al programar los parametros");
+        };
+    }
+
+    private Object[] ordenarDate(Atributo[] lista, String parametro) {
+        int largo = lista.length;
+
+        for (int j = 1; j < lista.length; j++) {
+            Atributo current = lista[j];
+            int i = j-1;
+            Date primerString = (Date) lista[i].ObtenerAtributo(parametro);
+            Date segundoString = (Date) lista[i].ObtenerAtributo(parametro);
+            while((primerString.compareTo(segundoString)>0))
+            {
+                lista[i+1] = lista[i];
+                i--;
+            }
+            lista[i+1] = current;
+        }
+
+        return lista;
+    }
+
+    private Object[] ordenarInt(Atributo[] lista, String parametro) {
+        int largo = lista.length;
+
+        for (int j = 1; j < lista.length-1; j++) {
+            Atributo current = lista[j];
+            int i = j-1;
+            while((Integer)lista[i].ObtenerAtributo(parametro) <
+                    (Integer)lista[i].ObtenerAtributo(parametro))
+            {
+                lista[i+1] = lista[i];
+                i--;
+            }
+            lista[i+1] = current;
+        }
+        return lista;
+    }
+
+    private Object[] ordenarString(Atributo[] lista, String parametro) {
+
+        int largo = lista.length;
+
+        for (int j = 1; j < lista.length; j++) {
+            Atributo current = lista[j];
+            int i = j-1;
+            String primerString = String.valueOf(lista[i].ObtenerAtributo(parametro));
+            String segundoString = String.valueOf(lista[i].ObtenerAtributo(parametro));
+
+            while ((primerString.compareTo(segundoString)>0) )
+            {
+                lista[i+1] = lista[i];
+
+                i--;
+            }
+            lista[i+1] = current;
+        }
+
+        return lista;
+    }
+}
+
+//posible error en lista[i+1] // corregido
+//
