@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68bee07f-de6d-4066-b1f3-bcacbac1cf4b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/FactorySearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/BinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/BinarySearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/Buscar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/Buscar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/LinealSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Busqueda/LinealSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Funciones/FuncionesTabla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Funciones/FuncionesTabla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/FactorySort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/FactorySort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarAsistencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarAsistencias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/ControladoresVentanas/ControladorListarEmpleados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroAsistencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroAsistencias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroEmpleados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Vistas/VentanasListar/VentanaRegistroEmpleados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/SelecctionSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Controladores/Algoritmos/Ordenamiento/SelecctionSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/proyect/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/proyect/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +83,7 @@
       <workItem from="1663100463473" duration="1546000" />
       <workItem from="1663108170122" duration="14389000" />
       <workItem from="1663132122257" duration="2499000" />
-      <workItem from="1663199660435" duration="8223000" />
+      <workItem from="1663199660435" duration="12886000" />
     </task>
     <servers />
   </component>

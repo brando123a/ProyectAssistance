@@ -19,7 +19,6 @@ public class BinarySearch implements Buscar {
         return switch (((Object) tipo).getClass().getSimpleName()) {
             case "String" -> buscarString(lista, objetivo);
             case "Integer" -> buscarInt(lista, objetivo);
-            case "Date" -> buscarDate(lista, objetivo);
             default -> throw new Exception("Error al programar los parametros");
         };
     }
@@ -30,9 +29,6 @@ public class BinarySearch implements Buscar {
         return 0;
     }
     private int buscarString(Atributo[] lista, String objetivo){
-        return 0;
-    }
-    private int buscarDate(Atributo[] lista, String objetivo){
         return 0;
     }
 }
