@@ -7,6 +7,7 @@ import org.proyect.Modelos.Atributo;
 import org.proyect.Vistas.VentanasListar.VentanaRegistroAsistencias;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ControladorListarAsistencias extends Controlador {
     GenerarEmpleadosAsistencias generador = new GenerarEmpleadosAsistencias();
@@ -37,12 +38,17 @@ public class ControladorListarAsistencias extends Controlador {
 
         ventana.jButtonListar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {listarEmpleados();}
+            public void mouseClicked(java.awt.event.MouseEvent evt) {listarAsistencias();}
         });
 
         ventana.jButtonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {//FUNCION DE ...
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                try {
+                    bucarAsistencias();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -63,9 +69,10 @@ public class ControladorListarAsistencias extends Controlador {
         ventana.iniciar();
     }
 
-    private void listarEmpleados(){
+    private void listarAsistencias(){
         funcionesTabla.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
     }
+
     private void ordenamientoTabla() throws Exception {
         String algoritmo = (String) jCBAlgoritmo.getSelectedItem();
         String criterio = (String) jCBCriterio.getSelectedItem();
@@ -77,5 +84,17 @@ public class ControladorListarAsistencias extends Controlador {
             return;
         }
         funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
+    }
+
+
+    private void bucarAsistencias() throws Exception {
+        String tipoParametroBuscar = (((String) jCBBuscar.getSelectedItem()).trim()).toLowerCase();
+        String algoritmoBusqueda = ((String) jCBMetodo.getSelectedItem()).trim();
+        String parametroBuscar = (jTFIngresar.getText()).trim();
+        if(parametroBuscar.equals("")){
+            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Ingrese un parametro al buscar");
+            return;
+        }
+        funcionesTabla.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
     }
 }

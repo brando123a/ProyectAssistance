@@ -114,7 +114,7 @@ public class VentanaRegistroAsistencias extends javax.swing.JFrame implements Ve
         panel1.add(jCBBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 170, 29));
 
         jCBMetodo.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jCBMetodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Secuencial ", "Binaria " }));
+        jCBMetodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LinealSearch ", "BinarySearch " }));
         panel1.add(jCBMetodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 100, 170, 30));
 
         jTFIngresar.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N

@@ -112,7 +112,7 @@ public class VentanaRegistroEmpleados extends javax.swing.JFrame implements Vent
         panel1.add(jCBBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 22, 170, 29));
 
         jCBMetodo.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N
-        jCBMetodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Secuencial ", "Binaria " }));
+        jCBMetodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "LinealSearch ", "BinarySearch " }));
         panel1.add(jCBMetodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 101, 170, 30));
 
         jTFIngresar.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 16)); // NOI18N

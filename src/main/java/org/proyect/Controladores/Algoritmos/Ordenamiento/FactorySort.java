@@ -3,7 +3,7 @@ package org.proyect.Controladores.Algoritmos.Ordenamiento;
 import org.proyect.Modelos.Atributo;
 
 public class FactorySort {
-    public Ordenar devolverAlgoritmoOrdenamiento(String algoritmo){
+    private Ordenar devolverAlgoritmoOrdenamiento(String algoritmo){
         switch (algoritmo) {
             case "Bubblesort" -> {
                 return new BubbleSort();

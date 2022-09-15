@@ -5,8 +5,8 @@ import org.proyect.Modelos.Atributo;
 public class LinealSearch implements Buscar{
     //en dado caso no se encuentre devolver -1
     @Override
-    public int busqueda(Atributo[] lista, String objetivo) throws Exception {
-        Object tipo = lista[0].ObtenerAtributo(objetivo);
+    public int busqueda(Atributo[] lista, String tipoObjetivo, String objetivo) throws Exception {
+        Object tipo = lista[0].ObtenerAtributo(tipoObjetivo);
         return switch (((Object) tipo).getClass().getSimpleName()) {
             case "String" -> buscarString(lista, objetivo);
             case "Integer" -> buscarInt(lista, objetivo);

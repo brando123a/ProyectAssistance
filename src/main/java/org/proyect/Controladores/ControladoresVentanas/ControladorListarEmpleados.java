@@ -7,6 +7,7 @@ import org.proyect.Vistas.VentanasListar.VentanaRegistroEmpleados;
 import org.proyect.Controladores.Controlador;
 
 import javax.swing.*;
+import java.awt.*;
 
 
 public class ControladorListarEmpleados extends Controlador{
@@ -43,7 +44,12 @@ public class ControladorListarEmpleados extends Controlador{
 
         ventana.jButtonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
             @Override
-            public void mouseClicked(java.awt.event.MouseEvent evt) {//FUNCION DE ...
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                try {
+                    bucarEmpleados();
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -68,15 +74,24 @@ public class ControladorListarEmpleados extends Controlador{
         funcionesTabla.actualizarTabla(jTablePrincipal,listaInicial,caracteristicas);
     }
     private void ordenamientoTabla() throws Exception {
-        String algoritmo = (String) jCBAlgoritmo.getSelectedItem();
-        String criterio = (String) jCBCriterio.getSelectedItem();
-        criterio = criterio.toLowerCase();
-        algoritmo = algoritmo.trim();
+        String algoritmo = ((String) jCBAlgoritmo.getSelectedItem()).trim();
+        String criterio = ((String) jCBCriterio.getSelectedItem()).toLowerCase();
         System.out.println("+++"+algoritmo+"+++");
         if (criterio.equals("dni")){
             funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,"id",caracteristicas);
             return;
         }
         funcionesTabla.ordenarTabla(jTableOrdenada,listaInicial,algoritmo,criterio,caracteristicas);
+    }
+    private void bucarEmpleados() throws Exception {
+        String tipoParametroBuscar = (((String) jCBBuscar.getSelectedItem()).trim()).toLowerCase();
+        if(tipoParametroBuscar.equals("dni")) tipoParametroBuscar = "id";
+        String algoritmoBusqueda = ((String) jCBMetodo.getSelectedItem()).trim();
+        String parametroBuscar = (jTFIngresar.getText()).trim();
+        if(parametroBuscar.equals("")){
+            javax.swing.JOptionPane.showMessageDialog((Component) ventana,"Ingrese un parametro al buscar");
+            return;
+        }
+        funcionesTabla.buscarTabla(jTableBusqueda,listaInicial,caracteristicas,tipoParametroBuscar,algoritmoBusqueda,parametroBuscar);
     }
 }

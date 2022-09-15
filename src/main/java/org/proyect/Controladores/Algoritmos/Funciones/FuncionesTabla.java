@@ -1,5 +1,6 @@
 package org.proyect.Controladores.Algoritmos.Funciones;
 
+import org.proyect.Controladores.Algoritmos.Busqueda.FactorySearch;
 import org.proyect.Controladores.Algoritmos.Ordenamiento.FactorySort;
 import org.proyect.Modelos.Atributo;
 
@@ -13,7 +14,7 @@ public class FuncionesTabla {
 
     public void actualizarTabla(JTable tabla, Atributo[] lista, String[] caracteristicas) {
         modeloTable = (DefaultTableModel) tabla.getModel();
-        modeloTable.setRowCount(0);
+        vaciarTabla(tabla);
         Object[] ob = new Object[caracteristicas.length];
         for (Atributo atributo : lista) {
             for (int j = 0; j < caracteristicas.length; j++) {
@@ -28,9 +29,26 @@ public class FuncionesTabla {
         modeloTable.setRowCount(0);
         tabla.setModel(modeloTable);
     }
-    public void ordenarTabla(JTable tabla,Atributo[] lista, String metodo, String parametro, String[] caracteristicas) throws Exception {
+
+
+    public void ordenarTabla(JTable tabla,Atributo[] lista, String metodo, String parametro,
+                             String[] caracteristicas) throws Exception {
+
         FactorySort algoritmos = new FactorySort();
         lista = (Atributo[]) algoritmos.ordenarLista(metodo,lista,parametro);
         actualizarTabla(tabla,lista,caracteristicas);
+    }
+
+
+    public void buscarTabla(JTable tabla, Atributo[] lista, String[] caracteristicas, String tipoParametroBuscar,
+                            String algoritmoBusqueda, String parametroBuscar ) throws Exception {
+
+        modeloTable = (DefaultTableModel) tabla.getModel();
+        FactorySearch algoritmo = new FactorySearch();
+        int indice = algoritmo.buscarLista(algoritmoBusqueda,lista,tipoParametroBuscar, parametroBuscar);
+        if(indice == -1) throw new Exception("NO SE ENCONTRO LA BUSQUEDA PEDIDA");
+        Atributo[] respuesta = new Atributo[1];
+        respuesta[0] = lista[indice];
+        actualizarTabla(tabla,respuesta,caracteristicas);
     }
 }
