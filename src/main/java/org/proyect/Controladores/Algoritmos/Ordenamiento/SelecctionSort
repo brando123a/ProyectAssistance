@@ -1,0 +1,77 @@
+package org.proyect.Controladores.Algoritmos.Ordenamiento;
+
+import org.proyect.Modelos.Atributo;
+
+import java.util.Date;
+
+public class SelecctionSort implements Ordenar {
+
+
+    @Override
+    public Object[] ordenamiento(Atributo[] lista, String parametro) throws Exception {
+        Object tipo = lista[0].ObtenerAtributo(parametro);
+        return switch (((Object) tipo).getClass().getSimpleName()) {
+            //case "String" -> ordenarString(lista,parametro);
+            case "Integer" -> ordenarInt(lista, parametro);
+            case "Date" -> ordenarDate(lista, parametro);
+            default -> throw new Exception("Error al programar los parametros");
+
+
+        };
+    }
+
+    private Object[] ordenarDate(Atributo[] lista, String parametro) {
+        int largo = lista.length;
+        for (int i = 0; i < lista.length; i++) {
+            int min = i;
+            for (int j = i + 1; j < lista.length; j++) {
+                Date primerString = (Date) lista[j].ObtenerAtributo(parametro);
+                Date segundoString = (Date) lista[min].ObtenerAtributo(parametro);
+                if (primerString.compareTo(segundoString) > 0) {
+                    min = j;
+                }
+                Atributo swap = lista[i];
+                lista[i] = lista[min];
+                lista[min] = swap;
+            }
+        }
+        return lista;
+    }
+    private Object[] ordenarString(Atributo[] lista, String parametro) {
+        int largo = lista.length;
+        for (int i = 0; i < largo; i++) {
+            int min = i;
+            for (int j = i + 1; j < largo; j++) {
+                String primerString = String.valueOf(lista[j].ObtenerAtributo(parametro));
+                String segundoString = String.valueOf(lista[min].ObtenerAtributo(parametro));
+                if (primerString.compareTo(segundoString)>0)  {
+                    min = j;}
+                Atributo swap = lista[i];
+                lista[i] = lista[min];
+                lista[min] = swap;
+            }
+        } return lista;
+    }
+
+    private Object[] ordenarInt(Atributo[] lista, String parametro) {
+
+        int largo = lista.length;
+
+        for (int i = 0; i < lista.length-1; i++) {
+            int min = i;
+            for (int j = i + 1; j < lista.length; j++) {
+                if((Integer) lista[j].ObtenerAtributo(parametro) <
+                        (Integer) lista[min].ObtenerAtributo(parametro)) {
+                    min = j;}
+                Atributo swap = lista[i];
+                lista[i] = lista[min];
+                lista[min] = swap;
+            }
+        } return lista;
+    }
+}
+
+
+
+//posible error en simbolo "<" ">"// corregido
+//> orden de mayor a menor < orden menor a mayor
