@@ -1,0 +1,141 @@
+package org.proyect.Controladores.Algoritmos.Ordenamiento;
+
+import org.proyect.Modelos.Atributo;
+
+public class QuickSort implements Ordenar {
+    @Override
+    public Object[] ordenamiento(Atributo[] lista, String parametro) throws Exception {
+
+        return switch (((Object) parametro).getClass().getSimpleName()) {
+            case "String" -> ordenarString(lista, parametro, 0, lista.length - 1);
+            case "Integer" -> ordenarInt(lista, parametro, 0, lista.length - 1);
+            case "Date" -> ordenarDate(lista, parametro, 0, lista.length - 1);
+            default -> throw new Exception("Error al programar los parametros");
+        };
+    }
+
+    private Object[] ordenarDate(Atributo[] lista, String parametro, int primero, int ultimo) {
+       /* int central = (primero + ultimo) / 2;
+        Atributo pivote = lista[central];
+        int i = primero;
+        int j = ultimo;
+
+        while(true) {
+            while (String primerString = //String.valueOf(lista[i].ObtenerAtributo(parametro))
+            ++i;
+            {
+
+                while ( String segundoString = //String.valueOf(lista[j].ObtenerAtributo(parametro)){
+                --j;
+            }
+
+                if ((primerString.compareTo(segundoString) > 0)) {
+                    if (i <= j) {
+                        Atributo temp = lista[i];
+                        lista[i] = lista[j];
+                        lista[j] = temp;
+                        ++i;
+                        --j;
+                    }
+
+                    if (i > j) {
+                        if (primero < j) {
+                            ordenarInt(lista, parametro, primero, j);
+                        }
+
+                        if (i < ultimo) {
+                            ordenarInt(lista, parametro, i, ultimo);
+                        }
+
+                        return lista;
+                    }
+                }
+
+
+            }*/
+            return lista;
+        }
+
+
+
+
+    private Object[] ordenarInt (Atributo[] lista, String parametro,int primero,int ultimo){
+        int central = (primero + ultimo) / 2;
+         Atributo pivote = lista[central];
+        int i = primero;
+        int j = ultimo;
+
+        while(true) {
+            while((Integer) lista[i].ObtenerAtributo(parametro)<(Integer)pivote.ObtenerAtributo(parametro))
+                ++i;{
+                while((Integer)lista[j].ObtenerAtributo(parametro) > (Integer)pivote.ObtenerAtributo(parametro)) {
+                    --j;
+                }
+
+                if (i <= j) {
+                    Atributo temp = lista[i];
+                    lista[i] = lista[j];
+                    lista[j] = temp;
+                    i++;
+                    j--;
+                }
+
+                if (i <= j) {
+                    if (primero < j) {
+                        ordenarInt(lista,parametro, primero, j);
+                    }
+
+                    if (i < ultimo) {
+                        ordenarInt(lista,parametro, i, ultimo);
+                    }
+
+                    return lista;
+                }
+            }
+
+
+        }
+    }
+//error en simbolo "<" o ">"
+
+
+
+    private Object[] ordenarString (Atributo[] lista, String parametro,int primero,int ultimo){
+        /*int central = (primero + ultimo) / 2;
+        Atributo pivote = lista[central];
+        int i = primero;
+        int j = ultimo;
+        while(true) {
+            while(Date primerString = //(Date) lista[i].ObtenerAtributo(parametro) )
+                ++i;{
+                while(// Date segundoString = //(Date) lista[j+1].ObtenerAtributo(parametro); ) {
+                    --j;
+                }
+/////posible error if ((primerString.compareTo(segundoString) > 0)) {
+                if (i <= j) {
+                    Atributo temp = lista[i];
+                    lista[i] = lista[j];
+                    lista[j] = temp;
+                    ++i;
+                    --j;
+                }
+
+                if (i > j) {
+                    if (primero < j) {
+                        ordenarInt(lista,parametro, primero, j);
+                    }
+
+                    if (i < ultimo) {
+                        ordenarInt(lista,parametro, i, ultimo);
+                    }
+
+                    return lista;
+                }
+            }
+
+
+        }*/
+        return lista;
+    }
+}
+
